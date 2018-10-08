@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#custom
 export PATH=$PATH:/home/anode/.config/composer/vendor/bin
 
 alias www='cd /home/anode/public_html/'
