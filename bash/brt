@@ -1,0 +1,21 @@
+#BASH SCRIPT 29 Jan 2017 - Brightness Adjuster
+RED='\033[0;31m'
+NS='\033[0m'
+
+echo "Enter brightness (Max 4800)"
+read bright
+
+if [ $bright -gt 4800 ]
+then
+bright=4800
+elif [ $bright -lt 1200 ]
+then
+bright=1200
+fi
+
+echo -e "${RED}********************************"
+echo -e "${RED}Changing brightness to $bright${NC}"
+echo -e "${RED}********************************"
+sudo sh -c "echo $bright > /sys/class/backlight/intel_backlight/brightness"
+exit 0
+
